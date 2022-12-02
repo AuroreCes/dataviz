@@ -251,6 +251,22 @@ ggplot(fulldt) +
 
 
 #Faire boxplot pour etudes pere et mere 
+# Analyse des notes (compris entre 0 et 20) selon la profession de la mère (Mjob) compris entre les catégories : teacher, services, other, healt et at home.
+#On observe selon le boxplot que les élèves ayant une mère qui est soit enseignante, soit dans la santé ou à la maison ont leurs notes minimums comprises entre 5 et 7.
+#La majorité des éléves ont des notes tournant autour de la moyenne (la majorité des premiers quartiles dépassant la note 10), ceux qui ont les notes les plus élevés 
+#sont ceux dont leurs mères est enseignante (médiane supérieure aux autres ainsi que le troisième quartile). Les élèves qui ont leurs mères qui est « autres » (other) ont 
+#leurs notes minimum qui est plus large (4,5 environ), sûrement liées au fait que cette catégorie est très large (beaucoup de qualificatif large à l’intérieur).
+#Les éléves ayant une mère enseignante (teacher) ont de meilleures notes (ayant leur médiane se rapprochant plus de 15 et leur 3e quartile dépassant les 15).
+#Ceux qui ont une mère à la maison (at_home) en majorité ont des notes comprises entre 10 et 14 (la médiane etant environ à 11).
+#On peut conclure alors que la profession de la mère à une influence sur les résultats scolaire de l’éleve. Cela peut s’expliquer notamment par le temps disponible
+#lié à la profession, mais aussi les aides qui peuvent être apporté (par exemple le fait d’être enseignant est plus susceptible d’aider).
+#Ces résultats suivent de nombreux travaux sur la question de l’impact de la profession des parents sur les résultats scolaires, comme par exemple dans l’article de Samuel 
+#Fontaine et Jean-François Hamon en 2010 dans « La représentation sociale de l'école des parents et des enseignants à La Réunion » où les parents enseignants partageraient
+#les « mêmes valeurs que l’école » (p 100), ce qui aurait un impact positif sur les notes de leurs enfants.
+
+
+
+
 
 ggplot(fulldt) +
   aes(x = G3, y = guardian, fill = guardian) +
