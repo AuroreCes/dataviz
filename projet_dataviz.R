@@ -249,6 +249,23 @@ ggplot(fulldt) +
   theme_bw()
 
 
+# Analyse de la consommation d’alcool durant le travail en semaine (Dalc) et la consommation d’alcool durant le week-end
+# (Walc) selon le genre : Valeurs numérique : 1 – Equivaut a tres faible et 5 – equivaut à tres elevee. 
+#A travers le nuage de points ce que l'on peut voir selon la consommation d'alcool pendant le travail en semaine 
+#(Dalc) et en week-end (Walc)  c’est qu’il y a peu de consommation d’alcool que ce soit pour les hommes ou pour les femmes,
+#les points étant principalement concentrer entre le nombre 1 et 1,5. De manières générale il y a plus de consomation d'alcool le week-end que durant le travail
+#en semaine.
+#Les femmes à part quelques occurrences (certain point compris au-delà de 5), boivent moins que les hommes qui sont
+#plus nombreux à boire durant le travail en semaine (une importante répartition de points entre le 4 et le 5). 
+
+#Pour la consommation d’alcool durant le week-end (Walc), il y a également peu de consommation 
+#(majorité étant compris dans le 1) que ce soit pour les hommes ou pour les femmes . Il y a plus de consommation de la part
+#des hommes durant le week end les points bleu étant compris entre le 4 et le 5. Il y a une augmentation de la consommation d’alcool pour les hommes le week-end (points bleu compris entre le 4 et le 5). 
+
+#Selon notre nuages de points les hommes consomme plus d’alcool le week-end (la majorité étant 
+#comprises dans le 4) que la semaine (la majorité étant comprises entre le 3 et 4). 
+
+#Les femmes consommerai plus d’alcool durant le week-end (entre le 2 et le 3) qu’en semaine (majorité en 1). 
 
 #Faire boxplot pour etudes pere et mere 
 
@@ -266,12 +283,51 @@ ggplot(fulldt) +
 
 #b)Recherche plus poussée des raisons d'une consommation d'alcool «excessive» :
 
+# Consomation "excessive" d'alcool selon le soutien scolaire : variable schoolsup :
+gglot(fulldt) +
+  aes(x = Dalc + Walk, fill = schoolsup ) +
+  geom_histogram(bins = 30L) +
+  scale_fill_hue(direction = 1) +
+  labs (   
+    x = "consomation d'alcool en semaine et en week end = consomation d'alcool excessive"
+    y = "Nombres d'eleves"
+    title = "Le soutien scolaire et la consomation excessive d'alcool",
+    fill = "Beneficie de soutien scolaire"
+  ) +
+  theme_minimal()
+
+# Essaie de calcul des variables famsup et paidclass. 
+
+# Consomation d'alcool excessive selon le soutien scolaire familial : variable famsup :
+
+gglot(fulldt) +
+  aes(x = Dalc + Walk, fill = famsup) +
+  geom_histogram(bins = 30L) +
+  scale_fill_hue(direction = 1) +
+  labs (   
+    x = "consomation d'alcool en semaine et en week end = consomation d'alcool excessive"
+    y = "Nombres d'eleves"
+    title = "Le soutien scolaire familial et la consomation excessive d'alcool",
+    fill = "Beneficie de soutien scolaire familial"
+  ) +
+  theme_minimal()
 
 
+# Consomation d'alcool excessive selon les cours supplémentaire payant : varable paidclass :
 
+gglot(fulldt) +
+  aes(x = Dalc + Walk, fill = paidclass) +
+  geom_histogram(bins = 30L) +
+  scale_fill_hue(direction = 1) +
+  labs (   
+    x = "consomation d'alcool en semaine et en week end = consomation d'alcool excessive"
+    y = "Nombres d'eleves"
+    title = "Le soutien scolaire familial et la consomation excessive d'alcool",
+    fill = "Beneficie de soutien scolaire familial"
+  ) +
+  theme_minimal()
 
-
-
+# Essaie 
 
 #Partie Juliette
 
